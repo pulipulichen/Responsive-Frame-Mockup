@@ -1,0 +1,11 @@
+{
+  "elements": {},
+  "attributes": {
+    "ref": {
+      "context": "input"
+    },
+    "v-on:click": {
+      "context": "a"
+    }
+  }
+}
