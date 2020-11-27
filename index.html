@@ -20,6 +20,7 @@
     <script src="./vendors/dom-to-img/dom-to-image.min.js"></script>
     <script src="./vendors/date-helper.js"></script>
 
+    <script src="https://unpkg.com/http-vue-loader"></script>
   </head>
   <body>
 
@@ -33,23 +34,11 @@
         <a class="item select">
           <select v-model="frameType">
             <option value="browser">Browser</option>
-            <option value="phone">Phone</option>
+            <!-- <option value="phone">Phone</option> -->
+            <option value="phone-portrait">Phone (Portrait)</option>
+            <option value="phone-landscape">Phone (Landscape)</option>
             <option value="tablet-landscape">Tablet (Landscape)</option>
             <option value="tablet-portrait">Tablet (Portrait)</option>
-            <!--
-            <option value="browser">
-              <i class="window maximize outline icon"></i>
-              Browser
-            </option>
-            <option value="phone">
-              <i class="mobile alternate icon"></i>
-              Phone
-            </option>
-            <option value="tablet">
-              <i class="tablet alternate icon"></i>
-              Tablet
-            </option>
-            -->
           </select>
         </a>
         <a class="item" v-on:click="changeImage">
@@ -77,63 +66,29 @@
         
         <!-- ================================== -->
         
-        <div v-if="frameType === 'browser'" class="browser-frame frame" ref="BrowserFrame" v-on:click="saveImage">
-          <table width="100%" cellpadding="0" cellspacing="0">
-            <tbody>
-              <tr>
-                <td class="frame-left-top"></td>
-                <td class="frame-top"></td>
-                <td class="frame-right-top"></td>
-              </tr>
-            </tbody>
-          </table>
-          <table width="100%" cellpadding="0" cellspacing="0">
-            <tbody>
-              <tr>
-                <td class="frame-left">&nbsp;</td>
-                <td class="frame-image"><img v-bind:src="imgSrc" /></td>
-                <td class="frame-right">&nbsp;</td>
-              </tr>
-            </tbody>
-          </table>
-          <table width="100%" cellpadding="0" cellspacing="0">
-            <tbody>
-              <tr>
-                <td class="frame-left-bottom"></td>
-                <td class="frame-bottom"></td>
-                <td class="frame-right-bottom"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
         
-        <!-- ================================== -->
         
-        <div v-if="frameType === 'phone'" 
-             class="phone-frame frame" 
-             ref="PhoneFrame" 
-             v-on:click="saveImage"
-             v-bind:class="{'show-notification-bar': deviceDisplayNotificationBar}">
-          <div class="device-frame-container">
-            <div class="device-notification">
-              <div class="left time">
-                09:00
-              </div>
-              <div class="right battery">
-                <i class="wifi icon"></i>
-                <i class="signal icon"></i>
-                100%
-              </div>
-            </div>
-            <div class="device-background"></div>
-            <div class="device-frame"></div>
-          </div>
-
-          <div class="img-container">
-            <img v-bind:src="imgSrc" v-bind:class="{'is-landscape': imgIsLandscape}" />
-          </div>
-        </div>
-          
+        <!-- ================================================= -->
+        
+        <frame-browser 
+          ref="BrowserFrame" 
+          v-if="frameType === 'browser'"
+          v-on:click="saveImage">
+        </frame-browser>
+        
+        <frame-phone 
+          ref="PhoneFrame" 
+          v-if="frameType === 'phone'"
+          v-on:click="saveImage">
+        </frame-phone>
+        
+        <frame-phone-portrait 
+          ref="PhonePortraitFrame" 
+          v-if="frameType === 'phone-portrait'"
+          v-on:click="saveImage">
+        </frame-phone-portrait>
+        
+        <!-- ================================================= -->
         
         <div v-if="frameType === 'tablet-landscape'" class="tablet-landscape-frame frame" ref="TabletLandscapeFrame" v-on:click="saveImage">
           <div class="device-frame"></div>
@@ -150,11 +105,14 @@
       <input type="file" ref="ImageFile" class="image-file" v-on:change="changeImageFile" />
     </div>
 
+    <!-- ================================================ -->
+    
     <script src="./scripts/vue-app-computed.js"></script>
     <script src="./scripts/vue-app-data.js"></script>
     <script src="./scripts/vue-app-methods.js"></script>
     <script src="./scripts/vue-app-mounted.js"></script>
     <script src="./scripts/vue-app-watch.js"></script>
+    <script src="./scripts/vue-app-components.js"></script>
     
     <script src="./scripts/vue-app.js"></script>
     

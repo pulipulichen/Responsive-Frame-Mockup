@@ -8,7 +8,7 @@ var appMethods = {
     let node = this.currentFrame
 
     domtoimage.toPng(node)
-        .then(function (dataUrl) {
+        .then((dataUrl) => {
             var link = document.createElement("a");
     
             link.download = this.frameType + '-' + (new Date()).mmddhhmm() + '.png';

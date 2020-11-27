@@ -1,6 +1,9 @@
 {
-  "elements": {},
+  "elements": {
+    "style": {}
+  },
   "attributes": {
+    "v-bind:class": {},
     "ref": {
       "context": "input"
     },

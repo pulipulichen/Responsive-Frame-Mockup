@@ -1,0 +1,130 @@
+.phone-responsive-frame {
+  
+  @width: 916px;
+  @height: 1979px;
+  
+  @marginLeft: 24px;
+  @marginRight: 24px;
+  
+  @notificationBarHeight: 60px;
+  
+  
+  .frame-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .frame-image-container {
+    //maring-left: @marginLeft;
+    //maring-: @marginRight;
+    width: @width - @marginLeft - @marginRight;
+    min-height: 900px;
+    background-color: black;
+    display: inline-block;
+  }
+  
+  .frame-content {
+    //position: absolute;
+
+    //width: @width;
+
+    //margin-top: -200px;
+    //margin-bottom: -200px;
+
+    .device-notification {
+      margin-left: @marginLeft;
+      margin-right: @marginRight;
+
+      padding-left: @marginLeft + 25x;
+      padding-right: @marginRight + 20px;
+
+      height: @notificationBarHeight;
+      line-height: @notificationBarHeight;
+
+      font-size: 24pt;
+    }
+    
+    .frame-image-container {
+      min-height: 1350px;
+    }
+
+  }
+  
+  .frame-image-background-container {
+    width: @width;
+    
+    .frame-left,
+    .frame-right {
+      display: inline-block;
+      width: 24px;
+      //height: 100%;
+      //min-height: 100%;
+      background-repeat: repeat-y;
+      //background-color: red;
+      
+      overflow: hidden;
+      margin-top: 300px;
+      
+      .frame-image {
+        visibility: hidden;
+        margin-top: -450px;
+      }
+      .frame-image-container {
+        background-color: transparent;
+      }
+    }
+    
+    .frame-left {
+      float: left;
+      background-image: url(../img/frames/phone-frame/middle-left.png);
+    }
+    
+    .frame-right {
+      float: right;
+      background-image: url(../img/frames/phone-frame/middle-right.png);
+    }
+    
+  }
+  
+  // -----------------------------------------
+  
+  .frame-top-container {
+    margin-bottom: -752px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .frame-bottom-container {
+    margin-top: -220px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  // ------------------------------
+  
+  &:not(.show-notification-bar) {
+    .device-notification {
+      display: none;
+    }
+    
+    .frame-image-background-container {
+      .frame-left,
+      .frame-right {
+        margin-top: 300px;
+        .frame-image {
+          margin-top: -510px;
+        }
+      }
+    }
+    
+    .frame-bottom-container {
+      margin-top: -280px;
+    }
+    
+    .frame-content {
+      .frame-image-container {
+        min-height: 1410px;
+      }
+    }
+  }
+}
