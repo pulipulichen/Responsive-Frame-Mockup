@@ -1,24 +1,26 @@
 .frame-phone-landscape {
   
-  @width: 916px;
-  @height: 1979px;
+  @height: 916px;
+  @width: 1979px;
   
-  @marginLeft: 24px;
-  @marginRight: 24px;
+  @marginTop: 24px;
+  @marginBottom: 24px;
   
   @notificationBarHeight: 60px;
   
+  width: @width + 1200px;
+  //border: 1px solid green;
   
   .frame-image {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    width: auto;
   }
   
   .frame-image-container {
     //maring-left: @marginLeft;
     //maring-: @marginRight;
-    width: @width - @marginLeft - @marginRight;
-    min-height: 900px;
+    height: @height - @marginTop - @marginBottom;
+    min-width: 900px;
     background-color: black;
     display: inline-block;
   }
@@ -30,13 +32,15 @@
 
     //margin-top: -200px;
     //margin-bottom: -200px;
+    line-height: 0;
+    margin-top: -5px;
 
     .device-notification {
-      margin-left: @marginLeft;
-      margin-right: @marginRight;
+      margin-left: 25px;
+      margin-right: 25px;
 
-      padding-left: @marginLeft + 25x;
-      padding-right: @marginRight + 20px;
+      padding-left: 50x;
+      padding-right: 50px;
 
       height: @notificationBarHeight;
       line-height: @notificationBarHeight;
@@ -45,57 +49,64 @@
     }
     
     .frame-image-container {
-      min-height: 1350px;
+      min-width: 1350px;
     }
 
   }
   
   .frame-image-background-container {
-    width: @width;
+    height: @width;
+    display: inline-block;
+    //border: 1px solid red;
     
-    .frame-left,
-    .frame-right {
+    .frame-top,
+    .frame-bottom {
       display: inline-block;
-      width: 24px;
+      max-height: 24px;
       //height: 100%;
       //min-height: 100%;
-      background-repeat: repeat-y;
+      background-repeat: repeat-x;
       //background-color: red;
       
       overflow: hidden;
-      margin-top: 300px;
+      margin-left: 300px;
       
       .frame-image {
         visibility: hidden;
-        margin-top: -450px;
+        margin-left: -450px;
       }
       .frame-image-container {
         background-color: transparent;
       }
     }
     
-    .frame-left {
-      float: left;
-      background-image: url(../img/frames/phone-portrait/middle-left.png);
+    .frame-top {
+      //float: right;
+      max-height: 25px;
+      background-image: url(../img/frames/phone-landscape/middle-right2top.png);
     }
     
-    .frame-right {
-      float: right;
-      background-image: url(../img/frames/phone-portrait/middle-right.png);
+    .frame-bottom {
+      //float: left;
+      background-image: url(../img/frames/phone-landscape/middle-left2bottom.png);
     }
     
   }
   
   // -----------------------------------------
   
-  .frame-top-container {
-    margin-bottom: -752px;
+  .frame-left-container {
+    display: inline-block;
+    margin-right: -752px;
+    
     position: relative;
     z-index: 2;
   }
   
-  .frame-bottom-container {
-    margin-top: -220px;
+  .frame-right-container {
+    display: inline-block;
+    margin-left: -220px;
+    
     position: relative;
     z-index: 2;
   }
@@ -110,20 +121,20 @@
     .frame-image-background-container {
       .frame-left,
       .frame-right {
-        margin-top: 300px;
+        margin-left: 300px;
         .frame-image {
-          margin-top: -510px;
+          margin-left: -510px;
         }
       }
     }
     
     .frame-bottom-container {
-      margin-top: -280px;
+      margin-left: -280px;
     }
     
     .frame-content {
       .frame-image-container {
-        min-height: 1410px;
+        min-width: 1410px;
       }
     }
   }
