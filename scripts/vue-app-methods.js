@@ -5,6 +5,10 @@ var appMethods = {
     this.$refs.ImageFile.click()
   },
   saveImage () {
+    if (this.debug.disableSave === true) {
+      return false
+    }
+    
     let node = this.currentFrame
 
     domtoimage.toPng(node)
@@ -50,25 +54,13 @@ var appMethods = {
     }
   },
   initCheckbox () {
-    $(this.$refs.Menu).find('.ui.checkbox').checkbox()
+    if (!this.$refs.AppMenu) {
+      setTimeout(() => {
+        this.initCheckbox ()
+      }, 100)
+      return false
+    }
+    
+    $(this.$refs.AppMenu.$el).find('.ui.checkbox').checkbox()
   }
-  /*
-  initImageFileInput () {
-    setTimeout(() => {
-      const file = this.$refs.ImageFile
-      //console.log(file)
-      const reader = new FileReader();
-
-      reader.addEventListener("load", function () {
-        // convert image file to base64 string
-        let result = reader.result
-        console.log(result)
-      }, false);
-
-      //if (file) {
-        reader.readAsDataURL(file);
-      //}
-    }, 100)
-  }
-   */
 }

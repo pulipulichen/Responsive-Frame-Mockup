@@ -1,5 +1,6 @@
 <template>
-  <div class="browser-frame frame">
+  <div class="browser-frame frame"
+       v-on:click="$parent.saveImage">
     <table width="100%" cellpadding="0" cellspacing="0">
       <tbody>
         <tr>

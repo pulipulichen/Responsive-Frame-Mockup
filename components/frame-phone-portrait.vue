@@ -1,6 +1,7 @@
 <template>
   <div class="frame-phone-portrait frame" 
-       v-bind:class="{'show-notification-bar': $parent.deviceDisplayNotificationBar}">
+       v-bind:class="{'show-notification-bar': $parent.deviceDisplayNotificationBar}"
+       v-on:click="$parent.saveImage">
 
      <div class="frame-top-container">
        <img src="img/frames/phone-portrait/top.png" />

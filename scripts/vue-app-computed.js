@@ -1,7 +1,7 @@
 var appComputed = {
   currentFrame () {
     if (this.frameType === 'browser') {
-      return this.$refs.BrowserFrame
+      return this.$refs.BrowserFrame.$el
     }
     else if (this.frameType === 'phone') {
       return this.$refs.PhoneFrame.$el
@@ -13,10 +13,10 @@ var appComputed = {
       return this.$refs.PhoneLandscapeFrame.$el
     }
     else if (this.frameType === 'tablet-landscape') {
-      return this.$refs.TabletLandscapeFrame
+      return this.$refs.TabletLandscapeFrame.$el
     }
     else if (this.frameType === 'tablet-portrait') {
-      return this.$refs.TabletPortraitFrame
+      return this.$refs.TabletPortraitFrame.$el
     }
   },
   isDevice () {

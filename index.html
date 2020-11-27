@@ -26,92 +26,41 @@
 
     <div id="app">
 
-      <div class="ui top fixed menu form"
-           ref="Menu">
-        <div class="item">
-          <img src="./img/favicon.png">
-        </div>
-        <a class="item select">
-          <select v-model="frameType">
-            <option value="browser">Browser</option>
-            <!-- <option value="phone">Phone</option> -->
-            <option value="phone-portrait">Phone (Portrait)</option>
-            <option value="phone-landscape">Phone (Landscape)</option>
-            <option value="tablet-landscape">Tablet (Landscape)</option>
-            <option value="tablet-portrait">Tablet (Portrait)</option>
-          </select>
-        </a>
-        <a class="item" v-on:click="changeImage">
-          <i class="image icon"></i>
-          Change Image
-        </a>
-        <a class="item" v-show="isDevice">
-          <div class="inline field">
-            <div class="ui toggle checkbox">
-              <input type="checkbox" tabindex="0" class="hidden"
-                     v-model="deviceDisplayNotificationBar">
-              <label>Show Notification Bar</label>
-            </div>
-          </div>
-        </a>
-        <a class="item" v-show="isDevice">
-          <div class="inline field">
-            <input type="text" tabindex="0"
-                   v-model="deviceBackgroundColor"
-                   placeholder="Background Color">
-          </div>
-        </a>
-        <a class="item" v-on:click="saveImage">
-          <i class="download icon"></i>
-          Download
-        </a>
-      </div>
+      <app-menu ref="AppMenu"></app-menu>
       
       <img v-bind:src="imgSrc" class="image-detector" ref="ImageDetector" />
 
       <div class="frame-container">
         
-        <!-- ================================== -->
-        
-        
-        
-        <!-- ================================================= -->
-        
         <frame-browser 
           ref="BrowserFrame" 
           v-if="frameType === 'browser'"
-          v-on:click="saveImage">
+          v-bind:class="{smaller: debug.smaller}">
         </frame-browser>
         
         <frame-phone 
           ref="PhoneFrame" 
           v-if="frameType === 'phone'"
-          v-on:click="saveImage">
+          v-bind:class="{smaller: debug.smaller}">
         </frame-phone>
         
         <frame-phone-portrait 
           ref="PhonePortraitFrame" 
           v-if="frameType === 'phone-portrait'"
-          v-on:click="saveImage">
+          v-bind:class="{smaller: debug.smaller}">
         </frame-phone-portrait>
         
         <frame-phone-landscape
           ref="PhoneLandscapeFrame" 
           v-if="frameType === 'phone-landscape'"
-          v-on:click="saveImage">
+          v-bind:class="{smaller: debug.smaller}">
         </frame-phone-landscape>
         
-        <!-- ================================================= -->
-        
-        <div v-if="frameType === 'tablet-landscape'" class="tablet-landscape-frame frame" ref="TabletLandscapeFrame" v-on:click="saveImage">
-          <div class="device-frame"></div>
-          <img v-bind:src="imgSrc" />
-        </div>
-        
-        <div v-if="frameType === 'tablet-portrait'" class="tablet-portrait-frame frame" ref="TabletPortraitFrame" v-on:click="saveImage">
-          <div class="device-frame"></div>
-          <img v-bind:src="imgSrc" />
-        </div>
+        <frame-tablet-portrait 
+          ref="TabletPortraitFrame" 
+          v-if="frameType === 'tablet-portrait'"
+          v-bind:class="{smaller: debug.smaller}">
+        </frame-tablet-portrait>
         
       </div>
       
