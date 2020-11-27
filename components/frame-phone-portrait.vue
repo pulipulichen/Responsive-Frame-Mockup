@@ -3,7 +3,7 @@
        v-bind:class="{'show-notification-bar': $parent.deviceDisplayNotificationBar}">
 
      <div class="frame-top-container">
-       <img src="img/frames/phone-frame/top.png" />
+       <img src="img/frames/phone-portrait/top.png" />
      </div>
 
      <div class="frame-image-background-container">
@@ -19,16 +19,7 @@
        </div>
 
        <div class="frame-content">
-         <div class="device-notification">
-           <div class="left time">
-             09:00
-           </div>
-           <div class="right battery">
-             <i class="wifi icon"></i>
-             <i class="signal icon"></i>
-             100%
-           </div>  
-         </div>
+         <device-notification-bar></device-notification-bar>
 
          <div class="frame-image-container">
            <img v-bind:src="$parent.imgSrc" class="frame-image" v-bind:class="{'is-landscape': $parent.imgIsLandscape}" />
@@ -38,7 +29,7 @@
      </div>
 
      <div class="frame-bottom-container">
-       <img src="img/frames/phone-frame/bottom.png" />
+       <img src="img/frames/phone-portrait/bottom.png" />
      </div>
    </div>
 </template>
