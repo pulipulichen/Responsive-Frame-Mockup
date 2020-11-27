@@ -1,6 +1,8 @@
 # Browser-Frame-Mockup
 Use empty Google Chrome browser as mockup frame.
 
+https://pulipulichen.github.io/Browser-Frame-Mockup/index.html
+
 # Resources
 
 Icon https://www.freepik.com/free-vector/browser-icon-circle_839492.htm

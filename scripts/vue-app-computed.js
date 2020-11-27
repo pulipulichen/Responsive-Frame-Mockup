@@ -21,5 +21,15 @@ var appComputed = {
   },
   isDevice () {
     return (this.frameType !== 'browser')
+  },
+  isBrowser () {
+    return (this.frameType === 'browser')
+  },
+  imageResizeWidth () {
+    if (this.browserImageScale === 1) {
+      return 'auto'
+    }
+    
+    return parseInt(this.browserImageScale * this.imgWidth, 10) + 'px'
   }
 }

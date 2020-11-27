@@ -9,6 +9,9 @@ var appData = {
   imgSrc: './img/demo/demo-browser.png',
   //imgSrc: './img/demo/reading.jpg',
   imgIsLandscape: false,
+  imgWidth: 800,
+  imgHeight: 600,
+  browserImageScale: 1,
   deviceDisplayNotificationBar: true,
   deviceBackgroundColor: "#CCC",
   debug: {

@@ -20,6 +20,18 @@
       <i class="image icon"></i>
       Change Image
     </a>
+    
+    <a class="item" v-show="$parent.isBrowser">
+      <div class="inline field">
+        <label>Resize</label>
+        <input type="range" 
+               v-model="$parent.browserImageScale"
+               min="0.3" max="1" step="0.1">
+      </div>
+    </a>
+    
+    <!-- =============================== -->
+    
     <a class="item" v-show="$parent.isDevice">
       <div class="inline field">
         <div class="ui toggle checkbox">
@@ -36,6 +48,9 @@
                placeholder="Background Color">
       </div>
     </a>
+    
+    <!-- =============================== -->
+    
     <a class="item" v-on:click="$parent.saveImage">
       <i class="download icon"></i>
       Download

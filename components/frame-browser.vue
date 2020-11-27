@@ -14,7 +14,12 @@
       <tbody>
         <tr>
           <td class="frame-left">&nbsp;</td>
-          <td class="frame-image"><img v-bind:src="$parent.imgSrc" /></td>
+          <td class="frame-image">
+            <div class="frame-image-container"
+                 v-bind:style="{width: $parent.imageResizeWidth}">
+              <img v-bind:src="$parent.imgSrc" />
+            </div>
+          </td>
           <td class="frame-right">&nbsp;</td>
         </tr>
       </tbody>

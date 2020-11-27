@@ -62,5 +62,20 @@ var appMethods = {
     }
     
     $(this.$refs.AppMenu.$el).find('.ui.checkbox').checkbox()
+  },
+  updateImgSize () {
+    
+    setTimeout(() => {
+      let img = this.$refs.ImageDetector
+      
+      let width = img.width
+      let height = img.height
+      this.imgIsLandscape = (width > height)
+      this.imgWidth = width
+      this.imgHeight = height
+      
+      console.log(width, height)
+    }, 0)
+    
   }
 }
