@@ -1,6 +1,6 @@
 .frame-phone-landscape {
   
-  @height: 916px;
+  @height: 915px;
   @width: 1979px;
   
   @marginTop: 24px;
@@ -50,7 +50,7 @@
     }
     
     .frame-image-container {
-      min-width: 1350px;
+      min-width: 1200px;
     }
 
   }
@@ -99,15 +99,17 @@
   
   .frame-left-container {
     display: inline-block;
-    margin-right: -752px;
+    margin-right: -882px;
     
     position: relative;
     z-index: 2;
   }
   
+  @frameBottomContainerMarginLeft: -290px;
+  
   .frame-right-container {
     display: inline-block;
-    margin-left: -220px;
+    margin-left: @frameBottomContainerMarginLeft - 2px;
     
     position: relative;
     z-index: 2;
@@ -133,8 +135,9 @@
       .frame-left,
       .frame-right {
         margin-left: 300px;
+        
         .frame-image {
-          margin-left: -510px;
+          //margin-left: -510px;
           //-642px
         }
       }
@@ -146,7 +149,8 @@
     
     .frame-content {
       .frame-image-container {
-        min-width: 1410px;
+        //min-width: 1410px;
+        min-width: 1351px;
       }
     }
   }

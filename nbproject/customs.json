@@ -9,6 +9,7 @@
       "context": "input"
     },
     "v-if": {},
+    "v-bind:style": {},
     "v-on:click": {
       "context": "a"
     },

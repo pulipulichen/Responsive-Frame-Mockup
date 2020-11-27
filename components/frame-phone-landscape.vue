@@ -16,7 +16,8 @@
        <div class="frame-content">
          <device-notification-bar></device-notification-bar>
 
-         <div class="frame-image-container">
+         <div class="frame-image-container"
+              v-bind:style="{'background-color': $parent.deviceBackgroundColor}">
            <img v-bind:src="$parent.imgSrc" class="frame-image" v-bind:class="{'is-landscape': $parent.imgIsLandscape}" />
          </div>
        </div>
