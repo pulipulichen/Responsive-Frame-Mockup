@@ -1,5 +1,5 @@
 <template>
-  <div class="frame-phone-portrait frame" 
+  <div class="frame-phone-landscape frame" 
        v-bind:class="{'show-notification-bar': $parent.deviceDisplayNotificationBar}">
 
      <div class="frame-top-container">
