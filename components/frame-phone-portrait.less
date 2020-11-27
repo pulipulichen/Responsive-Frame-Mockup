@@ -1,6 +1,6 @@
 .frame-phone-portrait {
   
-  @width: 916px;
+  @width: 915px;
   @height: 1979px;
   
   @marginLeft: 24px;
@@ -52,6 +52,7 @@
   
   .frame-image-background-container {
     width: @width;
+    white-space: nowrap;
     
     .frame-left,
     .frame-right {
@@ -63,11 +64,11 @@
       //background-color: red;
       
       overflow: hidden;
-      margin-top: 300px;
+      margin-top: 222px;
       
       .frame-image {
         visibility: hidden;
-        margin-top: -450px;
+        margin-top: -454px;
       }
       .frame-image-container {
         background-color: transparent;
@@ -89,15 +90,19 @@
   // -----------------------------------------
   
   .frame-top-container {
-    margin-bottom: -752px;
+    margin-bottom: -882px;
     position: relative;
     z-index: 2;
+    //border-bottom: 1px solid red;
   }
   
+  @frameBottomContainerMarginTop: -290px;
+  
   .frame-bottom-container {
-    margin-top: -220px;
+    margin-top: @frameBottomContainerMarginTop - 2px;
     position: relative;
     z-index: 2;
+    //border-top: 1px solid red;
   }
   
   // ------------------------------
@@ -110,20 +115,22 @@
     .frame-image-background-container {
       .frame-left,
       .frame-right {
-        margin-top: 300px;
+        margin-top: 222px - @notificationBarHeight;
         .frame-image {
-          margin-top: -510px;
+          //margin-top: -450px - @notificationBarHeight;
+          //margin-top: -450px - @notificationBarHeight;
+          //margin-top: -450px;
         }
       }
     }
     
     .frame-bottom-container {
-      margin-top: -280px;
+      margin-top: @frameBottomContainerMarginTop - @notificationBarHeight;
     }
     
     .frame-content {
       .frame-image-container {
-        min-height: 1410px;
+        min-height: 1351px;
       }
     }
   }

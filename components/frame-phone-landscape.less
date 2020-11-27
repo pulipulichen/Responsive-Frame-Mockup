@@ -8,9 +8,10 @@
   
   @notificationBarHeight: 60px;
   
-  width: @width + 1200px;
+  //width: @width + 1200px;
   //border: 1px solid green;
-  
+  white-space: nowrap;
+    
   .frame-image {
     height: 100%;
     width: auto;
@@ -20,7 +21,7 @@
     //maring-left: @marginLeft;
     //maring-: @marginRight;
     height: @height - @marginTop - @marginBottom;
-    min-width: 900px;
+    min-width: 700px;
     background-color: black;
     display: inline-block;
   }
@@ -36,11 +37,11 @@
     margin-top: -5px;
 
     .device-notification {
-      margin-left: 25px;
-      margin-right: 25px;
+      //margin-left: 25px;
+      //margin-right: 25px;
 
-      padding-left: 50x;
-      padding-right: 50px;
+      padding-left: 60px;
+      padding-right: 60px;
 
       height: @notificationBarHeight;
       line-height: @notificationBarHeight;
@@ -55,14 +56,13 @@
   }
   
   .frame-image-background-container {
-    height: @width;
+    height: @height;
     display: inline-block;
     //border: 1px solid red;
     
     .frame-top,
     .frame-bottom {
       display: inline-block;
-      max-height: 24px;
       //height: 100%;
       //min-height: 100%;
       background-repeat: repeat-x;
@@ -73,7 +73,7 @@
       
       .frame-image {
         visibility: hidden;
-        margin-left: -450px;
+        margin-left: -642px;
       }
       .frame-image-container {
         background-color: transparent;
@@ -82,11 +82,13 @@
     
     .frame-top {
       //float: right;
-      max-height: 25px;
+      max-height: 26px;
       background-image: url(../img/frames/phone-landscape/middle-right2top.png);
+      background-position-y: 1px;
     }
     
     .frame-bottom {
+      max-height: 24px;
       //float: left;
       background-image: url(../img/frames/phone-landscape/middle-left2bottom.png);
     }
@@ -113,6 +115,15 @@
   
   // ------------------------------
   
+  &.show-notification-bar {
+    
+    .frame-image-container {
+      //maring-left: @marginLeft;
+      //maring-: @marginRight;
+      height: @height - @marginTop - @marginBottom - @notificationBarHeight;
+    }
+  }
+  
   &:not(.show-notification-bar) {
     .device-notification {
       display: none;
@@ -124,6 +135,7 @@
         margin-left: 300px;
         .frame-image {
           margin-left: -510px;
+          //-642px
         }
       }
     }

@@ -54,6 +54,13 @@
             </div>
           </div>
         </a>
+        <a class="item" v-show="isDevice">
+          <div class="inline field">
+            <input type="text" tabindex="0"
+                   v-model="deviceBackgroundColor"
+                   placeholder="Background Color">
+          </div>
+        </a>
         <a class="item" v-on:click="saveImage">
           <i class="download icon"></i>
           Download
@@ -91,8 +98,7 @@
         <frame-phone-landscape
           ref="PhoneLandscapeFrame" 
           v-if="frameType === 'phone-landscape'"
-          
-          >
+          v-on:click="saveImage">
         </frame-phone-landscape>
         
         <!-- ================================================= -->
