@@ -5,13 +5,13 @@ var appMethods = {
     this.$refs.ImageFile.click()
   },
   saveImage () {
-    var node = document.getElementById('frame');
+    let node = this.currentFrame
 
     domtoimage.toPng(node)
         .then(function (dataUrl) {
             var link = document.createElement("a");
     
-            link.download = 'frame-' + (new Date()).mmddhhmm() + '.png';
+            link.download = this.frameType + '-' + (new Date()).mmddhhmm() + '.png';
             link.href = dataUrl;
             document.body.appendChild(link);
             link.click();
@@ -48,6 +48,9 @@ var appMethods = {
       })();
       reader.readAsDataURL(file);
     }
+  },
+  initCheckbox () {
+    $(this.$refs.Menu).find('.ui.checkbox').checkbox()
   }
   /*
   initImageFileInput () {

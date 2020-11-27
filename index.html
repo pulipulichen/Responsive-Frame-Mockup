@@ -25,7 +25,8 @@
 
     <div id="app">
 
-      <div class="ui top fixed menu form">
+      <div class="ui top fixed menu form"
+           ref="Menu">
         <div class="item">
           <img src="./img/favicon.png">
         </div>
@@ -55,14 +56,28 @@
           <i class="image icon"></i>
           Change Image
         </a>
+        <a class="item" v-show="isDevice">
+          <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden"
+                     v-model="deviceDisplayNotificationBar">
+              <label>Show Notification Bar</label>
+            </div>
+          </div>
+        </a>
         <a class="item" v-on:click="saveImage">
           <i class="download icon"></i>
           Download
         </a>
       </div>
+      
+      <img v-bind:src="imgSrc" class="image-detector" ref="ImageDetector" />
 
       <div class="frame-container">
-        <div class="frame" id="frame" v-on:click="saveImage">
+        
+        <!-- ================================== -->
+        
+        <div v-if="frameType === 'browser'" class="browser-frame frame" ref="BrowserFrame" v-on:click="saveImage">
           <table width="100%" cellpadding="0" cellspacing="0">
             <tbody>
               <tr>
@@ -91,6 +106,45 @@
             </tbody>
           </table>
         </div>
+        
+        <!-- ================================== -->
+        
+        <div v-if="frameType === 'phone'" 
+             class="phone-frame frame" 
+             ref="PhoneFrame" 
+             v-on:click="saveImage"
+             v-bind:class="{'show-notification-bar': deviceDisplayNotificationBar}">
+          <div class="device-frame-container">
+            <div class="device-notification">
+              <div class="left time">
+                09:00
+              </div>
+              <div class="right battery">
+                <i class="wifi icon"></i>
+                <i class="signal icon"></i>
+                100%
+              </div>
+            </div>
+            <div class="device-background"></div>
+            <div class="device-frame"></div>
+          </div>
+
+          <div class="img-container">
+            <img v-bind:src="imgSrc" v-bind:class="{'is-landscape': imgIsLandscape}" />
+          </div>
+        </div>
+          
+        
+        <div v-if="frameType === 'tablet-landscape'" class="tablet-landscape-frame frame" ref="TabletLandscapeFrame" v-on:click="saveImage">
+          <div class="device-frame"></div>
+          <img v-bind:src="imgSrc" />
+        </div>
+        
+        <div v-if="frameType === 'tablet-portrait'" class="tablet-portrait-frame frame" ref="TabletPortraitFrame" v-on:click="saveImage">
+          <div class="device-frame"></div>
+          <img v-bind:src="imgSrc" />
+        </div>
+        
       </div>
       
       <input type="file" ref="ImageFile" class="image-file" v-on:change="changeImageFile" />

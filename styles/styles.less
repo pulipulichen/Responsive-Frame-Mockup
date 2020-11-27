@@ -13,75 +13,29 @@ body {
 
 .frame-container {
   @marginTop: 55px;
-  margin-top: @marginTop;
+  
+  //margin-top: @marginTop;
+  width: 100vw;
   max-width: 100vw;
   max-height: calc(100vh - @marginTop);
   overflow: auto;
   padding: 2rem;
   text-align: center;
+  
+  position: fixed;
+  top: @marginTop;
 }
 
 .frame {
   display: inline-block;
   cursor: pointer;
-  
-  .frame-image {
-    line-height: 0;
-  }
-  
-  .frame-left-top {
-    width: 280px;
-    height: 80px;
-    background-image: url(../img/frames/google-chrome-light/left-top.png);
-    background-repeat: no-repeat;
-  }
-  
-  .frame-top {
-    //width: 280px;
-    height: 80px;
-    background-image: url(../img/frames/google-chrome-light/top.png);
-    background-repeat: repeat-x;
-  }
-  
-  .frame-right-top {
-    width: 98px;
-    height: 80px;
-    background-image: url(../img/frames/google-chrome-light/right-top.png);
-    background-repeat: no-repeat;
-  }
-  
-  .frame-left {
-    width: 4px;
-    //height: 80px;
-    background-image: url(../img/frames/google-chrome-light/left.png);
-    background-repeat: repeat-y;
-  }
-  
-  .frame-right {
-    width: 4px;
-    //height: 80px;
-    background-image: url(../img/frames/google-chrome-light/right.png);
-    background-repeat: repeat-y;
-  }
-  
-  .frame-right-bottom {
-    width: 4px;
-    height: 4px;
-    background-image: url(../img/frames/google-chrome-light/right-bottom.png);
-    background-repeat: no-repeat;
-  }
-  
-  .frame-left-bottom {
-    width: 4px;
-    height: 4px;
-    background-image: url(../img/frames/google-chrome-light/left-bottom.png);
-    background-repeat: no-repeat;
-  }
-  
-  .frame-bottom {
-    //width: 280px;
-    height: 4px;
-    background-image: url(../img/frames/google-chrome-light/bottom.png);
-    background-repeat: repeat-x;
-  }
 }
+
+.image-detector {
+  position: fixed;
+  top: 110vh;
+  left: 110vw;
+}
+
+@import "./browser-frame.less";
+@import "./phone-frame.less";

@@ -1,0 +1,103 @@
+.phone-frame {
+  
+  //border: 1px solid red;
+  
+  @width: 916px;
+  @height: 1979px;
+  
+  @marginTop: 86px;
+  @marginLeft: 24px;
+  @marginRight: 24px;
+  
+  @notificationBarHeight: 60px;
+  @notificationBarMarginBottom: 10px;
+  
+  width: @width;
+  height: @height;
+  
+  
+  .device-frame-container {
+    position: relative;
+    
+    .device-notification {
+      position: absolute;
+      z-index: -1;
+      
+      user-select: none;
+      color: white;
+      background-color: #333;
+      
+      width: @width - @marginLeft - @marginRight;
+      height: @notificationBarHeight;
+      left: @marginLeft - 5px;
+      top: @marginTop;
+      
+      font-size: 24pt;
+      line-height: @notificationBarHeight;
+      
+      .left {
+        float:left;
+        margin-left: 60px;
+      }
+      
+      .right {
+        float:right;
+        margin-right: 40px;
+      }
+    }
+    
+    .device-frame {
+      background-image: url(../img/frames/photo-frame.png);
+      background-repeat: no-repeat;
+      width: @width;
+      height: @height;
+
+      position: absolute;
+      //left: 13px;
+      
+    }
+    
+    .device-background {
+      position: absolute;
+      z-index: -2;
+      background-color: black;
+      
+      left: @marginLeft;
+      top: @marginTop;
+      
+      width: @width - @marginLeft - @marginRight;
+      height: @height - @marginTop - @notificationBarMarginBottom - 60px;
+    }
+  }
+  
+  .img-container {
+    max-height: @height - 70px;
+    overflow: hidden;
+    
+    img {
+      width: @width - @marginLeft - @marginRight;
+      height: auto;
+
+      //margin-left: @marginLeft;
+      margin-top: @marginTop + @notificationBarHeight;
+
+      //border: 1px solid red;
+    }
+  }
+  
+  &.show-notification-bar {
+      
+  }
+  
+  &:not(.show-notification-bar) {
+    .device-notification {
+      display: none;
+    }
+    
+    img {
+      margin-top: @marginTop;
+    }
+  }
+  
+    
+}

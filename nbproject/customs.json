@@ -4,8 +4,16 @@
     "ref": {
       "context": "input"
     },
+    "v-if": {},
     "v-on:click": {
       "context": "a"
-    }
+    },
+    "v-bind:src": {
+      "context": "img"
+    },
+    "v-model": {
+      "context": "select"
+    },
+    "v-show": {}
   }
 }
