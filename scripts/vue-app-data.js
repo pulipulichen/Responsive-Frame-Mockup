@@ -1,8 +1,8 @@
 var appData = {
-  //frameType: 'browser',
+  frameType: 'browser',
   //frameType: 'phone-landscape',
   //frameType: 'phone-portrait',
-  frameType: 'tablet-portrait',
+  //frameType: 'tablet-portrait',
   //imgSrc: './img/127243823_1603359236539994_2606480545547760605_n.jpg',
   //imgSrc: './img/demo/demo-phone-portrait.jpg',
   //imgSrc: './img/demo/demo-phone-landscape.jpg',
@@ -10,7 +10,7 @@ var appData = {
   //imgSrc: './img/demo/reading.jpg',
   imgIsLandscape: false,
   deviceDisplayNotificationBar: true,
-  deviceBackgroundColor: "red",
+  deviceBackgroundColor: "#CCC",
   debug: {
     smaller: false,
     disableSave: false

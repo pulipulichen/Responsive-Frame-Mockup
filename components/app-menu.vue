@@ -9,8 +9,11 @@
         <!-- <option value="phone">Phone</option> -->
         <option value="phone-portrait">Phone (Portrait)</option>
         <option value="phone-landscape">Phone (Landscape)</option>
+        <!--
         <option value="tablet-landscape">Tablet (Landscape)</option>
         <option value="tablet-portrait">Tablet (Portrait)</option>
+        -->
+        <option value="tablet-portrait">Tablet</option>
       </select>
     </a>
     <a class="item" v-on:click="$parent.changeImage">
