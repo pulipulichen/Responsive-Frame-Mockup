@@ -14,7 +14,8 @@
       <tbody>
         <tr>
           <td class="frame-left">&nbsp;</td>
-          <td class="frame-image">
+          <td class="frame-image"
+              v-bind:style="{'background-color': $parent.deviceBackgroundColor}">
             <div class="frame-image-container"
                  v-bind:style="{width: $parent.imageResizeWidth}">
               <img v-bind:src="$parent.imgSrc" />

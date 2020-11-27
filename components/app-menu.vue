@@ -41,7 +41,8 @@
         </div>
       </div>
     </a>
-    <a class="item" v-show="$parent.isDevice">
+    
+    <a class="item">
       <div class="inline field">
         <input type="text" tabindex="0"
                v-model="$parent.deviceBackgroundColor"
