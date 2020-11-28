@@ -35,5 +35,12 @@ var appComputed = {
     }
     
     return parseInt(this.browserImageScale * this.imgWidth, 10) + 'px'
+  },
+  imageResizeHeight () {
+    if (this.browserImageScale === 1) {
+      return this.imgHeight + 'px'
+    }
+    
+    return parseInt(this.browserImageScale * this.imgHeight, 10) + 'px'
   }
 }

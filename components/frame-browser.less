@@ -33,8 +33,8 @@
   }
   
   .frame-right-top {
-    width: 98px;
-    min-width: 98px;
+    width: 106px;
+    min-width: 106px;
     height: 80px;
     background-image: url(../img/frames/browser/google-chrome-light/right-top.png);
     background-repeat: no-repeat;
@@ -77,4 +77,46 @@
     background-image: url(../img/frames/browser/google-chrome-light/bottom.png);
     background-repeat: repeat-x;
   }
+  
+  // ---------------------------
+  
+  .scrollbar.horizontal.container {
+    height: 17px;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: visible;
+    background-color: white;
+    
+    
+    /*
+    &.vertical-scroll-visible {
+      margin-right: 10px;
+    }
+    */
+    .scrollbar.horizontal {
+      width: 300%;
+      height: 1px;
+    }
+  }
+  
+  .frame-vertical-scrollbar-container {
+    background-color: #DCDCDC;
+    vertical-align: top;
+    
+    .scrollbar.vertical.container {
+      width: 17px;
+      min-width: 17px;
+      max-height: 100%;
+      overflow-y: visible;
+      overflow-x: hidden;
+
+      background-color: white;
+
+      .scrollbar.vertical {
+        height: 300%;
+        width: 1px;
+      }
+    }
+  }
+  
 }

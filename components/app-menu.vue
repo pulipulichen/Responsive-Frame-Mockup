@@ -23,7 +23,8 @@
         <label>Resize</label>
         <input type="range" 
                v-model="$parent.browserImageScale"
-               min="0.3" max="1" step="0.1">
+               min="0.3" max="1" step="0.1"
+               class="resize-range">
       </div>
     </a>
     
@@ -43,8 +44,19 @@
       <div class="inline field">
         <input type="text" tabindex="0"
                v-model="$parent.deviceBackgroundColor"
-               placeholder="Background Color">
+               placeholder="Background Color"
+               size="8">
       </div>
+    </a>
+    
+    <a class="item input select-input">
+      <select v-model="$parent.browserScrollbarType">
+        <option 
+          v-for="option in $parent.browserScrollbarTypeOptions"
+          v-bind:value="option.value">
+            {{ option.label }}
+        </option>
+      </select>
     </a>
     
     <!-- =============================== -->

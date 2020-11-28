@@ -109,5 +109,24 @@ var appMethods = {
         this.frameType = 'tablet-portrait'
       }
     }
+  },
+  /**
+   * https://superuser.com/a/1585452
+   */
+  resetScrollbarStyle () {
+    for (var sheetI = 0; sheetI < document.styleSheets.length; ++sheetI) {
+        var sheet = document.styleSheets[sheetI];
+        try {
+            var ruleSet = sheet.rules || sheet.cssRules;
+            for (var i = 0; i < ruleSet.length; ++i) {
+                var rule = ruleSet[i];
+                if (/scrollbar/.test(rule.selectorText)) {
+                    sheet.deleteRule(i--);
+                }
+            }
+        } catch (e) {
+            console.warn("Can't read the css rules of: " + sheet.href, e);
+        }
+    };
   }
 }
