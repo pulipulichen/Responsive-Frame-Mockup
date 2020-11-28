@@ -49,7 +49,7 @@
       </div>
     </a>
     
-    <a class="item input select-input">
+    <a class="item input select-input large-screen">
       <select v-model="$parent.browserScrollbarType">
         <option 
           v-for="option in $parent.browserScrollbarTypeOptions"
