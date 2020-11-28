@@ -24,6 +24,7 @@ var appData = {
   browserDisplayHorizontalScroll: false,
   browserScrollbarType: 'vertical',
   browserScrollbarTypeOptions: [
+    { value: 'none', label: 'None' },
     { value: 'vertical', label: 'Only Vertical' },
     { value: 'horizontal', label: 'Only Horizontal' },
     { value: 'all', label: 'All' },

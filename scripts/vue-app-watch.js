@@ -18,5 +18,9 @@ var appWatch = {
       this.browserDisplayVerticalScroll = false
       this.browserDisplayHorizontalScroll = true
     }
+    else {
+      this.browserDisplayVerticalScroll = false
+      this.browserDisplayHorizontalScroll = false
+    }
   }
 }
