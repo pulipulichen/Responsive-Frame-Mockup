@@ -5,7 +5,9 @@ var appMount = async function () {
   this.initCheckbox()
   this.resetScrollbarStyle()
   
+  /*
   setTimeout(() => {
     this.updateImgSize()
-  }, 100)
+  }, 1000)
+   */
 }

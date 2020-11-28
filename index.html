@@ -29,7 +29,10 @@
       <app-menu ref="AppMenu"></app-menu>
       <app-menu-config ref="AppMenuConfig"></app-menu-config>
       
-      <img v-bind:src="imgSrc" class="image-detector" ref="ImageDetector" />
+      <img v-bind:src="imgSrc" 
+           class="image-detector" 
+           ref="ImageDetector"
+           v-on:load="initImageSize" />
 
       <div class="frame-container">
         

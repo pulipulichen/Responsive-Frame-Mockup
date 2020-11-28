@@ -128,5 +128,14 @@ var appMethods = {
             console.warn("Can't read the css rules of: " + sheet.href, e);
         }
     };
+  },
+  initImageSize () {
+    if (this.imgWidth !== null) {
+      return false
+    }
+    
+    setTimeout(() => {
+      this.updateImgSize()
+    }, 100)
   }
 }
