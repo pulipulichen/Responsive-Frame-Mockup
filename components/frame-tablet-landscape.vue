@@ -4,7 +4,7 @@
        v-on:click="$parent.saveImage">
 
      <div class="frame-left-container">
-       <img src="img/frames/phone-landscape/top2left.png" />
+       <img src="img/frames/tablet-landscape/top2left.png" />
      </div>
 
      <div class="frame-image-background-container">
@@ -32,7 +32,7 @@
      </div>
 
      <div class="frame-right-container">
-       <img src="img/frames/phone-landscape/bottom2right.png" />
+       <img src="img/frames/tablet-landscape/bottom2right.png" />
      </div>
    </div>
 </template>

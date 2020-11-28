@@ -1,10 +1,10 @@
 .frame-tablet-landscape {
   
-  @height: 915px;
+  @height: 1331px;
   @width: 1979px;
   
-  @marginTop: 24px;
-  @marginBottom: 24px;
+  @marginTop: 68px;
+  @marginBottom: 66px;
   
   @notificationBarHeight: 60px;
   
@@ -21,7 +21,7 @@
     //maring-left: @marginLeft;
     //maring-: @marginRight;
     height: @height - @marginTop - @marginBottom;
-    min-width: 700px;
+    //min-width: 700px;
     background-color: black;
     display: inline-block;
   }
@@ -50,7 +50,7 @@
     }
     
     .frame-image-container {
-      min-width: 1200px;
+      //min-width: 1200px;
     }
 
   }
@@ -69,11 +69,11 @@
       //background-color: red;
       
       overflow: hidden;
-      margin-left: 300px;
+      margin-left: 222px;
       
       .frame-image {
         visibility: hidden;
-        margin-left: -642px;
+        margin-left: -436px;
       }
       .frame-image-container {
         background-color: transparent;
@@ -82,15 +82,17 @@
     
     .frame-top {
       //float: right;
-      max-height: 26px;
-      background-image: url(../img/frames/phone-landscape/middle-right2top.png);
-      background-position-y: 1px;
+      max-height: @marginTop;
+      height: @marginTop;
+      background-image: url(../img/frames/tablet-landscape/middle-right2top.png);
+      background-position-y: -1px;
     }
     
     .frame-bottom {
-      max-height: 24px;
+      max-height: @marginBottom;
       //float: left;
-      background-image: url(../img/frames/phone-landscape/middle-left2bottom.png);
+      height: @marginBottom;
+      background-image: url(../img/frames/tablet-landscape/middle-left2bottom.png);
     }
     
   }
@@ -99,13 +101,13 @@
   
   .frame-left-container {
     display: inline-block;
-    margin-right: -882px;
+    margin-right: -425px;
     
     position: relative;
     z-index: 2;
   }
   
-  @frameBottomContainerMarginLeft: -290px;
+  @frameBottomContainerMarginLeft: -320px;
   
   .frame-right-container {
     display: inline-block;
@@ -134,7 +136,7 @@
     .frame-image-background-container {
       .frame-left,
       .frame-right {
-        margin-left: 300px;
+        margin-left: 222px;
         
         .frame-image {
           //margin-left: -510px;
@@ -150,7 +152,7 @@
     .frame-content {
       .frame-image-container {
         //min-width: 1410px;
-        min-width: 1351px;
+        //min-width: 1351px;
       }
     }
   }

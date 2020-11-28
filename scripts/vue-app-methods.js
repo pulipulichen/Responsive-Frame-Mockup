@@ -84,7 +84,7 @@ var appMethods = {
     $(this.$refs.AppMenuConfig.$el).modal('show')
   },
   updateLandscapeFrameType () {
-    //console.log(this.frameType, this.imgIsLandscape)
+    console.log(this.frameType, this.imgIsLandscape)
     if (this.imgIsLandscape === null) {
       return false
     }
@@ -95,6 +95,14 @@ var appMethods = {
       }
       else {
         this.frameType = 'phone-portrait'
+      }
+    }
+    else if (this.frameType.startsWith('tablet-')) {
+      if (this.imgIsLandscape === true) {
+        this.frameType = 'tablet-landscape'
+      }
+      else {
+        this.frameType = 'tablet-portrait'
       }
     }
   }
