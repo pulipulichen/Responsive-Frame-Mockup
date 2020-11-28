@@ -22,6 +22,10 @@ var appComputed = {
   isDevice () {
     return (this.frameType !== 'browser')
   },
+  isTablet () {
+    return (this.frameType === 'tablet-portrait' 
+            || this.frameType === 'tablet-landscape')
+  },
   isBrowser () {
     return (this.frameType === 'browser')
   },

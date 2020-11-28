@@ -17,7 +17,8 @@
       Change Image
     </a>
     
-    <a class="item input large-screen" v-show="$parent.isBrowser">
+    <a class="item input large-screen" 
+       v-show="$parent.isBrowser">
       <div class="inline field">
         <label>Resize</label>
         <input type="range" 

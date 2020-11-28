@@ -48,6 +48,8 @@ var appMethods = {
         return (e) => { 
           let dataURI = e.target.result
           this.imgSrc = dataURI
+          
+          // 自動判斷方向
         }; 
       })();
       reader.readAsDataURL(file);
@@ -73,12 +75,27 @@ var appMethods = {
       this.imgIsLandscape = (width > height)
       this.imgWidth = width
       this.imgHeight = height
-      
-      console.log(width, height)
+      this.updateLandscapeFrameType()
+      //console.log(width, height)
     }, 0)
     
   },
   openConfigModal () {
     $(this.$refs.AppMenuConfig.$el).modal('show')
+  },
+  updateLandscapeFrameType () {
+    //console.log(this.frameType, this.imgIsLandscape)
+    if (this.imgIsLandscape === null) {
+      return false
+    }
+    
+    if (this.frameType.startsWith('phone-')) {
+      if (this.imgIsLandscape === true) {
+        this.frameType = 'phone-landscape'
+      }
+      else {
+        this.frameType = 'phone-portrait'
+      }
+    }
   }
 }
