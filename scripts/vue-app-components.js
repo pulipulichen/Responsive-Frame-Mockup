@@ -11,4 +11,5 @@ var appComponents = {
   'frame-phone-portrait': httpVueLoader('./components/frame-phone-portrait.vue'),
   'frame-phone-landscape': httpVueLoader('./components/frame-phone-landscape.vue'),
   'frame-tablet-portrait': httpVueLoader('./components/frame-tablet-portrait.vue'),
+  'frame-tablet-landscape': httpVueLoader('./components/frame-tablet-landscape.vue'),
 }

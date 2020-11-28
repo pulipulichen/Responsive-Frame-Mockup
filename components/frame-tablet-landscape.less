@@ -1,0 +1,157 @@
+.frame-tablet-landscape {
+  
+  @height: 915px;
+  @width: 1979px;
+  
+  @marginTop: 24px;
+  @marginBottom: 24px;
+  
+  @notificationBarHeight: 60px;
+  
+  //width: @width + 1200px;
+  //border: 1px solid green;
+  white-space: nowrap;
+    
+  .frame-image {
+    height: 100%;
+    width: auto;
+  }
+  
+  .frame-image-container {
+    //maring-left: @marginLeft;
+    //maring-: @marginRight;
+    height: @height - @marginTop - @marginBottom;
+    min-width: 700px;
+    background-color: black;
+    display: inline-block;
+  }
+  
+  .frame-content {
+    //position: absolute;
+
+    //width: @width;
+
+    //margin-top: -200px;
+    //margin-bottom: -200px;
+    line-height: 0;
+    margin-top: -5px;
+
+    .device-notification {
+      //margin-left: 25px;
+      //margin-right: 25px;
+
+      padding-left: 60px;
+      padding-right: 60px;
+
+      height: @notificationBarHeight;
+      line-height: @notificationBarHeight;
+
+      font-size: 24pt;
+    }
+    
+    .frame-image-container {
+      min-width: 1200px;
+    }
+
+  }
+  
+  .frame-image-background-container {
+    height: @height;
+    display: inline-block;
+    //border: 1px solid red;
+    
+    .frame-top,
+    .frame-bottom {
+      display: inline-block;
+      //height: 100%;
+      //min-height: 100%;
+      background-repeat: repeat-x;
+      //background-color: red;
+      
+      overflow: hidden;
+      margin-left: 300px;
+      
+      .frame-image {
+        visibility: hidden;
+        margin-left: -642px;
+      }
+      .frame-image-container {
+        background-color: transparent;
+      }
+    }
+    
+    .frame-top {
+      //float: right;
+      max-height: 26px;
+      background-image: url(../img/frames/phone-landscape/middle-right2top.png);
+      background-position-y: 1px;
+    }
+    
+    .frame-bottom {
+      max-height: 24px;
+      //float: left;
+      background-image: url(../img/frames/phone-landscape/middle-left2bottom.png);
+    }
+    
+  }
+  
+  // -----------------------------------------
+  
+  .frame-left-container {
+    display: inline-block;
+    margin-right: -882px;
+    
+    position: relative;
+    z-index: 2;
+  }
+  
+  @frameBottomContainerMarginLeft: -290px;
+  
+  .frame-right-container {
+    display: inline-block;
+    margin-left: @frameBottomContainerMarginLeft - 2px;
+    
+    position: relative;
+    z-index: 2;
+  }
+  
+  // ------------------------------
+  
+  &.show-notification-bar {
+    
+    .frame-image-container {
+      //maring-left: @marginLeft;
+      //maring-: @marginRight;
+      height: @height - @marginTop - @marginBottom - @notificationBarHeight;
+    }
+  }
+  
+  &:not(.show-notification-bar) {
+    .device-notification {
+      display: none;
+    }
+    
+    .frame-image-background-container {
+      .frame-left,
+      .frame-right {
+        margin-left: 300px;
+        
+        .frame-image {
+          //margin-left: -510px;
+          //-642px
+        }
+      }
+    }
+    
+    .frame-bottom-container {
+      margin-left: -280px;
+    }
+    
+    .frame-content {
+      .frame-image-container {
+        //min-width: 1410px;
+        min-width: 1351px;
+      }
+    }
+  }
+}

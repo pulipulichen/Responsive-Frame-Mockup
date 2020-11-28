@@ -63,6 +63,12 @@
           v-bind:class="{smaller: debug.smaller}">
         </frame-tablet-portrait>
         
+        <frame-tablet-landscape 
+          ref="TabletLandscapeFrame" 
+          v-if="frameType === 'tablet-landscape'"
+          v-bind:class="{smaller: debug.smaller}">
+        </frame-tablet-landscape>
+        
       </div>
       
       <input type="file" ref="ImageFile" class="image-file" v-on:change="changeImageFile" />
