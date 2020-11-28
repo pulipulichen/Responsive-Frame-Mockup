@@ -4,7 +4,7 @@
   @width: 1979px;
   
   @marginTop: 68px;
-  @marginBottom: 66px;
+  @marginBottom: 65px;
   
   @notificationBarHeight: 60px;
   
@@ -93,6 +93,7 @@
       //float: left;
       height: @marginBottom;
       background-image: url(../img/frames/tablet-landscape/middle-left2bottom.png);
+      background-position-y: -1px;
     }
     
   }
@@ -154,6 +155,12 @@
         //min-width: 1410px;
         //min-width: 1351px;
       }
+    }
+  }
+  
+  &.save-style {
+    .frame-top {
+      background-position-y: 0px;
     }
   }
 }

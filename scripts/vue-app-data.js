@@ -2,7 +2,8 @@ var appData = {
   //frameType: 'browser',
   //frameType: 'phone-landscape',
   //frameType: 'phone-portrait',
-  frameType: 'tablet-landscape',
+  //frameType: 'tablet-landscape',
+  frameType: 'tablet-portrait',
   frameTypeOptions: [
     { value: 'browser', label: 'Browser' },
     { value: 'phone-portrait', label: 'Phone (Portrait)' },

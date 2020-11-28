@@ -10,7 +10,8 @@ var appMethods = {
     }
     
     let node = this.currentFrame
-
+    $(node).addClass('save-style')
+    
     domtoimage.toPng(node)
         .then((dataUrl) => {
             var link = document.createElement("a");
@@ -21,9 +22,12 @@ var appMethods = {
             link.click();
             document.body.removeChild(link);
             delete link;
+            
+            $(node).removeClass('save-style')
         })
         .catch(function (error) {
             console.error('oops, something went wrong!', error);
+            alert('oops, something went wrong!', error);
         });
   },
   changeImageFile () {
