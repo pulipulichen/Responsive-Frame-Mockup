@@ -5,6 +5,9 @@
   },
   "attributes": {
     "v-bind:class": {},
+    "v-bind:value": {
+      "context": "option"
+    },
     "ref": {
       "context": "input"
     },

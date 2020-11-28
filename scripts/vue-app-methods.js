@@ -61,7 +61,7 @@ var appMethods = {
       return false
     }
     
-    $(this.$refs.AppMenu.$el).find('.ui.checkbox').checkbox()
+    $(this.$el).find('.ui.checkbox').checkbox()
   },
   updateImgSize () {
     
@@ -77,5 +77,8 @@ var appMethods = {
       console.log(width, height)
     }, 0)
     
+  },
+  openConfigModal () {
+    $(this.$refs.AppMenuConfig.$el).modal('show')
   }
 }

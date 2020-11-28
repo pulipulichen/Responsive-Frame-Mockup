@@ -4,6 +4,7 @@ httpVueLoader.register(Vue, './components/device-notification-bar.vue');
 
 var appComponents = {
   'app-menu': httpVueLoader('./components/app-menu.vue'),
+  'app-menu-config': httpVueLoader('./components/app-menu-config.vue'),
   
   'frame-browser': httpVueLoader('./components/frame-browser.vue'),
   'frame-phone': httpVueLoader('./components/frame-phone.vue'),

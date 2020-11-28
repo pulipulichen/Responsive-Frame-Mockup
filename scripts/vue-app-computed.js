@@ -27,7 +27,7 @@ var appComputed = {
   },
   imageResizeWidth () {
     if (this.browserImageScale === 1) {
-      return 'auto'
+      return this.imgWidth + 'px'
     }
     
     return parseInt(this.browserImageScale * this.imgWidth, 10) + 'px'
