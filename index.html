@@ -34,7 +34,11 @@
            ref="ImageDetector"
            v-on:load="initImageSize" />
 
-      <div class="frame-container">
+      <div class="frame-container"
+           v-on:dragenter.stop.prevent="onDrop"
+           v-on:dragover.stop.prevent="onDrop"
+           v-on:dragleave.stop.prevent="onDrop"
+           v-on:drop.stop.prevent="onDrop">
         
         <frame-browser 
           ref="BrowserFrame" 

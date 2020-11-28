@@ -88,7 +88,7 @@ var appMethods = {
     $(this.$refs.AppMenuConfig.$el).modal('show')
   },
   updateLandscapeFrameType () {
-    console.log(this.frameType, this.imgIsLandscape)
+    //console.log(this.frameType, this.imgIsLandscape)
     if (this.imgIsLandscape === null) {
       return false
     }
@@ -137,5 +137,31 @@ var appMethods = {
     setTimeout(() => {
       this.updateImgSize()
     }, 100)
+  },
+  initDropPrevent () {
+    
+  },
+  onDrop (event) {
+    
+    event.preventDefault()
+    event.stopPropagation()
+    
+    //console.log(event)
+    let dt = event.dataTransfer
+    let files = dt.files
+
+
+    if (files.length === 0) {
+      return false
+    }
+    //console.log(files.length)
+    
+    let file = files[0]
+    
+    let reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onloadend = () => {
+      this.imgSrc = reader.result
+    }
   }
 }

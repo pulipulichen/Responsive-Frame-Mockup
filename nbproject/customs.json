@@ -16,6 +16,9 @@
     "v-on:click": {
       "context": "a"
     },
+    "v-on:drop": {
+      "context": "div"
+    },
     "v-bind:src": {
       "context": "img"
     },
