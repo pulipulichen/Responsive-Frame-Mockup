@@ -1,7 +1,7 @@
 <template>
   <div class="ui top fixed menu form app-menu">
     <div class="item">
-      <img src="./img/favicon.png">
+      <img src="./img/favicon/favicon.svg">
     </div>
     <a class="item input select-input">
       <select v-model="$parent.frameType">
