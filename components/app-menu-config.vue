@@ -39,7 +39,8 @@
                  placeholder="#333">
         </div>
         
-        <div class="field">
+        <div class="field"
+             v-show="$parent.isBrowser">
           <label>Scrollbar</label>
           <select v-model="$parent.browserScrollbarType">
             <option 

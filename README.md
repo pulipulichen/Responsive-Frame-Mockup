@@ -1,5 +1,5 @@
 # Browser-Frame-Mockup
-Use empty Google Chrome browser as mockup frame.
+Frame your picture in a browser, a phone, or a tablet. All the mockup frames will fit your picture size responsively.
 
 https://pulipulichen.github.io/Browser-Frame-Mockup/index.html
 

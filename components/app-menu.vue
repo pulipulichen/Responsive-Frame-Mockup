@@ -20,7 +20,6 @@
     <a class="item input large-screen" 
        v-show="$parent.isBrowser">
       <div class="inline field">
-        <label>Resize</label>
         <input type="range" 
                v-model="$parent.browserImageScale"
                min="0.3" max="1" step="0.1"
@@ -49,7 +48,8 @@
       </div>
     </a>
     
-    <a class="item input select-input large-screen">
+    <a class="item input select-input large-screen"
+       v-show="$parent.isBrowser">
       <select v-model="$parent.browserScrollbarType">
         <option 
           v-for="option in $parent.browserScrollbarTypeOptions"
