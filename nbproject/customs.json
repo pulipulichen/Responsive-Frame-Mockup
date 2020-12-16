@@ -16,6 +16,7 @@
     "v-on:click": {
       "context": "a"
     },
+    "v-on:dragenter.stop.prevent": {},
     "v-on:drop": {
       "context": "div"
     },
