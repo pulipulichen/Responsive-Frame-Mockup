@@ -15,8 +15,7 @@
           </select>
         </div>
 
-        <div class="field" 
-             v-show="$parent.isBrowser">
+        <div class="field" >
           <label>Resize</label>
           <input type="range" 
                  v-model="$parent.browserImageScale"
