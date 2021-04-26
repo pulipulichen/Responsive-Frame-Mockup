@@ -15,8 +15,10 @@ var appMethods = {
     domtoimage.toPng(node)
         .then((dataUrl) => {
             var link = document.createElement("a");
-    
+            
             link.download = this.frameType + '-' + (new Date()).mmddhhmm() + '.png';
+            console.log(link.download)
+            
             link.href = dataUrl;
             document.body.appendChild(link);
             link.click();
@@ -163,5 +165,24 @@ var appMethods = {
     reader.onloadend = () => {
       this.imgSrc = reader.result
     }
+  },
+  initHotkeys () {
+    /*
+    $(document).bind('keydown', 'ctrl+s', (e) => {
+        e.preventDefault();
+        e.stopPropagation()
+        
+        //console.log('Ctrl+S');
+        this.saveImage()
+        return false;
+    });
+    */
+    //console.log('ok')
+    hotkeys('ctrl+s', (event, handler) => {
+      event.preventDefault()
+      event.stopPropagation()
+      this.saveImage()
+      return false
+    });
   }
 }
