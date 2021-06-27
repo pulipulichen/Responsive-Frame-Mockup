@@ -1,4 +1,4 @@
-# Browser-Frame-Mockup
+# Responsive-Frame-Mockup
 Frame your picture in a browser, a phone, or a tablet. All the mockup frames will fit your picture size responsively.
 
 Online Demo: https://pulipulichen.github.io/Browser-Frame-Mockup/index.html
